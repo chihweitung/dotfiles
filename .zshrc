@@ -27,12 +27,6 @@ alias idb_log="export MOZ_LOG=IndexedDB:5"
 alias idb_disable="export MOZ_LOG=IndexedDB:0"
 alias loadnvm=". $(brew --prefix nvm)/nvm.sh"
 
-# ln
-ln -Fsv $HOME/.dotfiles/.zshrc $HOME
-ln -Fsv $HOME/.dotfiles/.vimrc $HOME
-ln -Fsv $HOME/.dotfiles/.tmux.conf $HOME
-
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
