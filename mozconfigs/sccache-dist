@@ -1,4 +1,5 @@
 # sccache
+mk_add_options MOZ_MAKE_FLAGS="-j64"
 export CFLAGS="--target=x86_64-apple-darwin16.0.0 -Wno-tautological-compare"
 export CXXFLAGS="--target=x86_64-apple-darwin16.0.0 -Wno-tautological-compare"
 export HOST_CFLAGS="--target=x86_64-apple-darwin16.0.0 -Wno-tautological-compare"

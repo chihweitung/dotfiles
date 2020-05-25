@@ -30,6 +30,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'larsbs/vimterial'
 Plugin 'zxqfl/tabnine-vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'easymotion/vim-easymotion'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -69,7 +70,6 @@ set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 
-map <C-]> :YcmCompleter GoToImprecise<CR>
 
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
@@ -85,6 +85,30 @@ nnoremap <silent> {Up-Mapping} :TmuxNavigateUp<cr>
 nnoremap <silent> {Right-Mapping} :TmuxNavigateRight<cr>
 nnoremap <silent> {Previous-Mapping} :TmuxNavigatePrevious<cr>
 
+" vim-easymotion
+" modify the leader key from <\> to <space>
+map <Space> <Leader>
+
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Turn on case-insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" YCM
+let g:ycm_use_clangd = 0
+
+" Goto def
+nnoremap <Leader>gd :YcmCompleter GoTo<CR>
+map <C-]> :YcmCompleter GoToImprecise<CR>
 
 au BufNewFile,BufRead *.jsm set filetype=javascript " jsm are mozilla's JavaScript modules
 

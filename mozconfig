@@ -1,5 +1,8 @@
 source /Users/tomtung/dotfiles/mozconfigs/common
-source /Users/tomtung/dotfiles/mozconfigs/noopt
-source /Users/tomtung/dotfiles/mozconfigs/debug
+#source /Users/tomtung/dotfiles/mozconfigs/noopt
+source /Users/tomtung/dotfiles/mozconfigs/opt
+#source /Users/tomtung/dotfiles/mozconfigs/debug
+source /Users/tomtung/dotfiles/mozconfigs/nodebug
 #source /Users/tomtung/dotfiles/mozconfigs/asan
-source /Users/tomtung/dotfiles/mozconfigs/sccache-dist
+#source /Users/tomtung/dotfiles/mozconfigs/sccache-dist
+#source /Users/tomtung/dotfiles/mozconfigs/andriod

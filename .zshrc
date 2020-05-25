@@ -1,7 +1,9 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.mozbuild/sccache:$PATH
 export PATH=$HOME/.mozbuild/moz-phab:$PATH
-export PATH=$HOME/.mozbuild/arcanist/bin:$HOME/.mozbuild/clang/bin:$PATH
+export PATH=$HOME/Work/Tools/arcanist/bin:$HOME/.mozbuild/clang/bin:$PATH
+export PATH=$HOME/Work/Tools/arcanist/:$PATH
+export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/opt/nss/bin:/usr/local/opt/ruby/bin:/usr/local/opt/unzip/bin:/usr/local/opt/qt/bin:$PATH
 export PATH=/usr/local/lib/ruby/gems/2.6.0/bin:$PATH
@@ -11,12 +13,7 @@ export PATH=/usr/local/opt/libarchive/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/tomtung/.oh-my-zsh"
 
-export ICECC_HOST="10.238.24.17"
-export USE_SCHEDULER=$ICECC_HOST
-export MOZCONFIG=/Users/tomtung/Work/mozilla-central/mozconfig
-export OPENSSL_STATIC=yes
-export CCACHE_PREFIX=icecc
-export CCACHE_COMPRESS=""
+#export MOZCONFIG=/Users/tomtung/dotfiles/mozconfig
 
 # llvm
 export LDFLAGS="-L/usr/local/opt/libffi/lib -L/usr/local/opt/llvm@7/lib -Wl,-rpath,/usr/local/opt/llvm@7/lib -L/usr/local/opt/openssl@1.1/lib -L/usr/local/opt/libarchive/lib"
@@ -95,6 +92,10 @@ source $HOME/.bash_profile
 source $HOME/.profile
 source $ZSH/oh-my-zsh.sh
 
+ln -svF ~/dotfiles/.zshrc ~
+ln -svF ~/dotfiles/.vimrc ~
+ln -svF ~/dotfiles/.tmux.conf ~
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -136,7 +137,8 @@ eval "$(perl -I$HOME/perl5/lib/perl5 -Mlocal::lib=$HOME/perl5)"
 
 alias mc="/Users/tomtung/Work/mozilla-central"
 alias grep="grep -E"
-alias ssh_server_ip="ssh shes050117@10.238.24.17 -p 5566 -X"
+alias ssh_server_ip="ssh shes050117@10.238.24.17 -p 5566 -XY"
+alias ssh_forward_port="ssh -L 12731:localhost:12731 shes050117@10.238.24.17 -p 5566"
 
 fflog () {
   args
